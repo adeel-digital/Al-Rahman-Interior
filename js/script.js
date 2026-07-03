@@ -1,47 +1,41 @@
-// 1. Smooth Scrolling for all Navigation & Button Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetElement = document.querySelector(this.getAttribute('href'));
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// 2. Dynamic Liquid Glass Navbar on Scroll
+// 1. Navbar Dynamic Shrink & Blend Scroll Controller
 window.addEventListener('scroll', () => {
-    const nav = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        nav.style.background = 'rgba(11, 16, 33, 0.85)';
-        nav.style.padding = '15px 0';
-        nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.5)';
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 60) {
+        navbar.style.width = '100%';
+        navbar.style.maxWidth = '100%';
+        navbar.style.borderRadius = '0px';
+        navbar.style.top = '0px';
+        navbar.style.background = 'rgba(250, 249, 245, 0.98)';
+        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.05)';
     } else {
-        nav.style.background = 'rgba(11, 16, 33, 0.4)';
-        nav.style.padding = '20px 0';
-        nav.style.boxShadow = 'none';
+        navbar.style.width = '90%';
+        navbar.style.maxWidth = '1200px';
+        navbar.style.borderRadius = '100px';
+        navbar.style.top = '30px';
+        navbar.style.background = 'rgba(250, 249, 245, 0.85)';
+        navbar.style.boxShadow = 'none';
     }
 });
 
-// 3. High-Res Video Carousel Logic (Rotates every 6 seconds)
-const videos = document.querySelectorAll('.hero-video');
-let currentVideo = 0;
+// 2. Active Section Highlighting Engine for Smooth Nav Buttons
+const sections = document.querySelectorAll('section');
+const navButtons = document.querySelectorAll('.nav-links a.nav-btn');
 
-if(videos.length > 1) {
-    setInterval(() => {
-        // Fade out current video
-        videos[currentVideo].classList.remove('active');
-        
-        // Move to next video
-        currentVideo = (currentVideo + 1) % videos.length;
-        
-        // Fade in new video
-        videos[currentVideo].classList.add('active');
-        // Reset playback so it starts fresh when shown
-        videos[currentVideo].currentTime = 0; 
-        videos[currentVideo].play();
-    }, 6000); // 6000ms = 6 seconds transition
-}
+window.addEventListener('scroll', () => {
+    let currentActive = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
+            currentActive = section.getAttribute('id');
+        }
+    });
+
+    navButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('href').includes(currentActive)) {
+            btn.classList.add('active');
+        }
+    });
+});
