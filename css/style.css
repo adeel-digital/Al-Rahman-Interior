@@ -196,3 +196,18 @@ span { color: var(--navy-blue); font-weight: 700; }
     .hero-content h1 { font-size: 2.5rem; }
     .social-sidebar { display: none; }
 }
+/* ADD THIS TO YOUR CSS FILE */
+.nav-cta-btn {
+    background: var(--navy-blue) !important;
+    color: #ffffff !important;
+    padding: 12px 28px !important;
+    border-radius: 8px !important;
+    transition: 0.3s ease !important;
+}
+.nav-cta-btn:hover {
+    background: #172A45 !important;
+    transform: translateY(-2px);
+}
+.text-white {
+    color: #ffffff !important;
+}
