@@ -1,6 +1,6 @@
 /* ==========================================================================
    AL-RAHMAN INTERIOR & CONSTRUCTION - MASTER ARCHITECTURAL SHEET
-   Theme: Exact 22902.jpeg High-Contrast Frosted Core Implementation
+   Theme: True iOS Glassmorphism with Minimalist Hamburger Architecture
    ========================================================================== */
 
 :root {
@@ -44,7 +44,6 @@ a { text-decoration: none !important; }
     box-shadow: var(--glass-shadow);
 }
 
-/* --- THE DYNAMIC DUAL CORAL TEXT VISIBILITY ENGINE --- */
 .dynamic-black-text { color: var(--text-black) !important; font-weight: 600 !important; }
 .hero-subtext-forced { color: #000000 !important; font-weight: 700 !important; line-height: 1.5; }
 .text-navy-forced { color: var(--navy-blue) !important; }
@@ -57,14 +56,14 @@ a { text-decoration: none !important; }
 .padding-large { padding: 60px; border-radius: 24px; }
 .full-width-element { width: 100% !important; }
 
-/* --- RE-ENGINEERED ULTRA-SLIM UNIFIED FIXED HEADER --- */
+/* --- RE-ENGINEERED DESKTOP HEADER --- */
 .main-header {
     position: fixed; top: 15px; left: 50%; transform: translateX(-50%);
     width: 92%; max-width: 1400px; height: 75px; border-radius: 20px;
     padding: 0 30px; display: flex; align-items: center; z-index: 1100;
 }
 .header-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
-.brand-logo img { height: 50px; width: auto; object-fit: contain; display: block; }
+.brand-logo img { height: 50px; width: auto; object-fit: contain; display: block; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1)); }
 
 .navigation-pill { display: flex; align-items: center; }
 .nav-menu-links { list-style: none; display: flex; gap: 30px; }
@@ -74,6 +73,9 @@ a { text-decoration: none !important; }
 }
 .menu-item:hover, .menu-item.active { background: var(--white-pure); box-shadow: 0 4px 12px rgba(10,25,47,0.1); }
 
+.header-actions { display: flex; align-items: center; gap: 15px; }
+.hamburger-btn { display: none; } /* Hidden on desktop */
+
 .header-cta-quote {
     background: #E11D48 !important; color: var(--white-pure) !important; font-weight: 700; font-size: 12px;
     text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 20px; border-radius: 12px;
@@ -81,7 +83,7 @@ a { text-decoration: none !important; }
 }
 .header-cta-quote:hover { background: #BE123C !important; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(225, 29, 72, 0.45); }
 
-/* --- BRAND CTA INTERACTION MATRIX (EXACT 22902.JPEG SIZING) --- */
+/* --- BRAND CTA INTERACTION MATRIX --- */
 .cta-navy-solid, .cta-navy-outline {
     padding: 16px 40px; border-radius: 12px; font-weight: 700; text-transform: uppercase;
     letter-spacing: 1.2px; font-size: 13px; text-align: center; display: inline-block; cursor: pointer; transition: var(--transition-fast);
@@ -100,7 +102,7 @@ a { text-decoration: none !important; }
 
 .hero-content-board { text-align: center; padding: 65px; border-radius: 32px; width: 85%; max-width: 800px; z-index: 2; margin-top: 50px; }
 .hero-glass-exact {
-    background: rgba(255, 255, 255, 0.22) !important; /* EXACT OPACITY TO IMAGE */
+    background: rgba(255, 255, 255, 0.22) !important;
     backdrop-filter: blur(25px) saturate(160%) !important;
     -webkit-backdrop-filter: blur(25px) saturate(160%) !important;
     border: 1px solid rgba(255, 255, 255, 0.45) !important;
@@ -157,7 +159,7 @@ a { text-decoration: none !important; }
     font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; transition: var(--transition-fast);
 }
 
-/* --- SYSTEM DEPLOYED FLOAT WIDGETS (EXACT 22902.JPEG ENHANCEMENTS) --- */
+/* --- SYSTEM DEPLOYED FLOAT WIDGETS --- */
 .social-sidebar-widget { position: fixed; left: 20px; bottom: 25px; display: flex; flex-direction: row; z-index: 1000; border-radius: 30px; overflow: hidden; background: rgba(255,255,255,0.85); border: 1px solid var(--glass-border); padding: 4px 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
 .widget-icon { font-size: 18px; padding: 10px 14px; text-align: center; color: var(--navy-blue); transition: var(--transition-fast); }
 .widget-icon:hover { color: #E11D48; }
@@ -170,7 +172,7 @@ a { text-decoration: none !important; }
 .brand-agency-credit-note { color: var(--navy-blue); font-weight: 700; margin-top: 8px; }
 
 /* ==========================================================================
-   ULTIMATE MOBILE RESPONSIVE ENGINE (DYNAMIC FORCE LOCK)
+   ULTIMATE MOBILE RESPONSIVE ENGINE (HAMBURGER DROPDOWN IMPLEMENTED)
    ========================================================================== */
 @media (max-width: 1024px) {
     .dual-grid-system, .contact-box-wrapper { grid-template-columns: 1fr; gap: 35px; }
@@ -181,24 +183,52 @@ a { text-decoration: none !important; }
     body, html { overflow-x: hidden !important; width: 100% !important; }
     .content-section-layout { padding: 60px 0 !important; }
 
-    /* UNIFIED SLIM BAR MOBILE LOGISTICS (Zero overlap blocks) */
+    /* UNIFIED SLIM BAR: Logo, Quote, Hamburger Inline */
     .main-header {
-        position: absolute !important; top: 15px !important; left: 50% !important;
+        position: fixed !important; top: 12px !important; left: 50% !important;
         transform: translateX(-50%) !important; width: 94% !important; height: auto !important;
-        padding: 10px 15px !important; flex-direction: column !important; gap: 10px !important;
-        border-radius: 16px !important;
+        padding: 10px 18px !important; flex-direction: column !important;
+        border-radius: 20px !important; background: var(--ios-glass-bg);
     }
-    .header-container { flex-direction: column !important; gap: 8px !important; }
-    .brand-logo img { height: 40px !important; margin: 0 auto !important; }
+    .header-container { flex-direction: row !important; justify-content: space-between !important; width: 100% !important; align-items: center; }
+    .brand-logo img { height: 38px !important; margin: 0 !important; }
     
-    .navigation-pill { width: 100% !important; justify-content: center !important; }
-    .nav-menu-links { gap: 4px !important; width: 100% !important; justify-content: space-between !important; overflow-x: auto; }
-    .menu-item { font-size: 11px !important; padding: 6px 10px !important; }
-    .header-actions { display: width 100% !important; text-align: center; margin-top: 4px; }
-    .header-cta-quote { width: 100% !important; padding: 8px 20px !important; display: block; font-size: 11px !important; border-radius: 10px; }
+    .header-actions { display: flex !important; align-items: center !important; gap: 12px !important; }
+    .header-cta-quote { padding: 8px 14px !important; font-size: 10.5px !important; margin: 0 !important; border-radius: 8px !important; }
+    
+    /* Reveal Hamburger Button */
+    .hamburger-btn { 
+        display: flex !important; align-items: center; justify-content: center; 
+        background: transparent; border: none; color: var(--navy-blue); 
+        font-size: 24px; cursor: pointer; transition: var(--transition-fast);
+        outline: none;
+    }
+    
+    /* HIDDEN MENU STATE (Ready to slide down) */
+    .navigation-pill { 
+        position: absolute !important; top: calc(100% + 10px) !important; left: 0 !important;
+        width: 100% !important; background: var(--ios-glass-bg) !important;
+        backdrop-filter: blur(25px) saturate(180%) !important; -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+        border: 1px solid var(--glass-border) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+        border-radius: 20px !important; padding: 20px !important;
+        flex-direction: column !important; justify-content: center !important;
+        opacity: 0; visibility: hidden; transform: translateY(-15px) scale(0.98);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    /* ACTIVE MENU STATE */
+    .navigation-pill.active {
+        opacity: 1 !important; visibility: visible !important; transform: translateY(0) scale(1) !important;
+    }
+    
+    .nav-menu-links { flex-direction: column !important; gap: 12px !important; width: 100% !important; align-items: stretch !important; }
+    .menu-item { 
+        font-size: 14px !important; padding: 12px !important; width: 100% !important; text-align: center !important; 
+        background: rgba(255,255,255,0.4); border-radius: 12px !important;
+    }
+    .menu-item:hover, .menu-item.active { background: var(--navy-blue) !important; color: var(--white-pure) !important; }
 
-    /* Hero section tracking exact 22902.jpeg structure metrics layout */
-    .hero-viewport { padding-top: 140px !important; height: auto !important; min-height: 100vh !important; display: flex !important; align-items: center !important; }
+    /* Hero section tracking exact 22902.jpeg layout */
+    .hero-viewport { padding-top: 100px !important; height: auto !important; min-height: 100vh !important; display: flex !important; align-items: center !important; }
     .hero-content-board { padding: 40px 20px !important; width: 92% !important; margin: 20px auto !important; border-radius: 28px !important; }
     .hero-content-board h1 { font-size: 1.85rem !important; line-height: 1.2 !important; margin-bottom: 15px !important; }
     .hero-content-board p { font-size: 0.95rem !important; margin-bottom: 30px !important; }
