@@ -16,9 +16,9 @@
 </head>
 <body>
 
-    <!-- 1. FLOATING INDEPENDENT BRAND LOGO (Decoupled from Navbar) -->
-    <a href="#home" class="floating-brand-logo" style="text-decoration: none !important;">
-        <img src="logo.png" alt="AL-Rahman Construction Logo">
+    <!-- 1. FLOATING INDEPENDENT BRAND LOGO (Now inside a true Liquid Glass Box) -->
+    <a href="#home" class="floating-brand-logo glass-panel" style="text-decoration: none !important; padding: 10px 18px; border-radius: 18px; display: flex; align-items: center; justify-content: center; position: fixed; z-index: 1050;">
+        <img src="logo.png" alt="AL-Rahman Construction Logo" style="height: 55px; width: auto; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">
     </a>
 
     <!-- 2. SYSTEM FLOATING INTERACTION WIDGETS -->
@@ -27,7 +27,7 @@
         <a href="https://www.instagram.com/alrahman_interior/?hl=en" target="_blank" class="social-link ig" title="Follow on Instagram" style="text-decoration: none !important;"><i class="fab fa-instagram"></i></a>
     </div>
 
-    <!-- WhatsApp Bug Fixed: Inline text-decoration obliteration -->
+    <!-- WhatsApp Floating Icon -->
     <a href="https://wa.me/923025113791" target="_blank" class="floating-whatsapp" title="Instant WhatsApp Liaison" style="text-decoration: none !important;">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -84,7 +84,7 @@
         </div>
     </section>
 
-    <!-- 6. CORE EXPERTISE MATRIX (Images + Hover Effect instead of standard icons) -->
+    <!-- 6. CORE EXPERTISE MATRIX (100% Verified Manual Image IDs) -->
     <section class="section-layout tinted-bg" id="services">
         <div class="container">
             <div class="section-header glass-panel">
@@ -92,9 +92,8 @@
                 <p>Delivering high-yield structural deployments and elite finishing across the capital.</p>
             </div>
             
-            <!-- Utilizing the robust portfolio grid architecture for premium service displays -->
             <div class="portfolio-grid">
-                <!-- Service 1: Turnkey -->
+                <!-- Service 1: Turnkey Construction -->
                 <div class="portfolio-item glass-border">
                     <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Turnkey Construction">
                     <div class="portfolio-hover">
@@ -112,7 +111,7 @@
                 </div>
                 <!-- Service 3: Renovation -->
                 <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Home Renovation">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Home Renovation">
                     <div class="portfolio-hover">
                         <h3>Complete Home Renovation</h3>
                         <p class="text-white mt-10">Comprehensive legacy property architectural overhaul transforming spaces to high-status layouts.</p>
@@ -120,7 +119,7 @@
                 </div>
                 <!-- Service 4: Ceiling -->
                 <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="False Ceiling">
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=800&q=80" alt="False Ceiling">
                     <div class="portfolio-hover">
                         <h3>False Ceiling Installation</h3>
                         <p class="text-white mt-10">Enhance your interior geometry with expertly crafted, modern design false ceilings.</p>
@@ -128,15 +127,15 @@
                 </div>
                 <!-- Service 5: Marble -->
                 <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Marble Fixing">
+                    <img src="https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=800&q=80" alt="Marble Fixing">
                     <div class="portfolio-hover">
                         <h3>Marble Fixing</h3>
                         <p class="text-white mt-10">High-precision technical deployment of premium marble arrays for luxurious layouts.</p>
                     </div>
                 </div>
-                <!-- Service 6: Wooden Doors -->
+                <!-- Service 6: Wooden Doors (Fixed Image) -->
                 <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Wooden Doors">
+                    <img src="https://images.unsplash.com/photo-1510627498534-bc260381f9b0?auto=format&fit=crop&w=800&q=80" alt="Custom Wooden Doors">
                     <div class="portfolio-hover">
                         <h3>Custom Wooden Doors</h3>
                         <p class="text-white mt-10">Elite, high-durability bespoke solid wooden entrance structures customized to spec.</p>
@@ -179,7 +178,7 @@
                         <h3>Dé Afghan - Commercial Elite Build</h3>
                     </div>
                 </div>
-                <!-- Dhamiyal Camp (Broken link fixed!) -->
+                <!-- Dhamiyal Camp -->
                 <div class="portfolio-item glass-border">
                     <img src="https://images.unsplash.com/photo-1504307651254-35680f356f58?auto=format&fit=crop&w=800&q=80" alt="Dhamiyal Camp Operations">
                     <div class="portfolio-hover">
@@ -228,7 +227,6 @@
                     <input type="email" name="Client_Email" placeholder="Email Address" required>
                     <input type="text" name="Client_Phone" placeholder="Phone Number" required>
                     
-                    <!-- Dropdown updated with Commercial Fit-out option -->
                     <select name="Service_Required" required>
                         <option value="" disabled selected>Select Primary Requirement</option>
                         <option value="Turnkey Construction (End-to-End)">1. Turnkey Construction (End-to-End)</option>
