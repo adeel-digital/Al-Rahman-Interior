@@ -6,7 +6,7 @@
     <title>AL-Rahman Interior & Construction | Turnkey Architectural Solutions</title>
     
     <!-- Premium Corporate Typography Engine -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Vector Infrastructure -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,190 +16,186 @@
 </head>
 <body>
 
-    <!-- 1. FLOATING INDEPENDENT BRAND LOGO (Decoupled from Navbar) -->
-    <a href="#home" class="floating-brand-logo" style="text-decoration: none !important;">
-        <img src="logo.png" alt="AL-Rahman Construction Logo">
-    </a>
-
-    <!-- 2. SYSTEM FLOATING INTERACTION WIDGETS -->
-    <div class="social-sidebar glass-panel">
-        <a href="https://www.facebook.com/Alrahmaninterior" target="_blank" class="social-link fb" title="Follow on Facebook" style="text-decoration: none !important;"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/alrahman_interior/?hl=en" target="_blank" class="social-link ig" title="Follow on Instagram" style="text-decoration: none !important;"><i class="fab fa-instagram"></i></a>
+    <!-- BAR 1: CENTERED MASTER LOGO GLASS BAR -->
+    <div class="logo-bar-centered-container">
+        <a href="#home" class="logo-centered-link">
+            <img src="logo.png" alt="AL-Rahman Core Branding Logo">
+        </a>
     </div>
 
-    <!-- WhatsApp Bug Fixed: Inline text-decoration obliteration -->
-    <a href="https://wa.me/923025113791" target="_blank" class="floating-whatsapp" title="Instant WhatsApp Liaison" style="text-decoration: none !important;">
+    <!-- BAR 2: CLEAN LINKS NAVIGATION PILL (No crowding, perfectly spacious) -->
+    <nav class="navbar-pill-container" id="navbar">
+        <ul class="nav-links-pills">
+            <li><a href="#home" class="pill-item active">Home</a></li>
+            <li><a href="#about" class="pill-item">About Us</a></li>
+            <li><a href="#services" class="pill-item">Services</a></li>
+            <li><a href="#portfolio" class="pill-item">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <!-- FLOATING INTERACTION WIDGETS -->
+    <div class="social-sidebar-widget">
+        <a href="https://www.facebook.com/Alrahmaninterior" target="_blank" class="widget-icon fb"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/alrahman_interior/?hl=en" target="_blank" class="widget-icon ig"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <a href="https://wa.me/923025113791" target="_blank" class="floating-whatsapp-widget">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- 3. LIQUID GLASS NAVIGATION PILL (Centered, Links Only) -->
-    <nav class="navbar glass-panel" id="navbar">
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact" class="nav-cta-btn text-white">GET QUOTE</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- 4. HERO VIEWPORT CAROUSEL CONTEXT -->
-    <section class="hero" id="home">
-        <div class="carousel-container">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80');"></div>
+    <!-- HERO VIEWPORT CAROUSEL CONTEXT -->
+    <section class="hero-viewport" id="home">
+        <div class="carousel-track">
+            <div class="carousel-slide active" style="background-image: url('https://images.pexels.com/photos/157811/pexels-photo-157811.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80');"></div>
+            <div class="carousel-slide" style="background-image: url('https://images.pexels.com/photos/443383/pexels-photo-443383.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80');"></div>
+            <div class="carousel-slide" style="background-image: url('https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80');"></div>
         </div>
 
-        <div class="hero-content glass-panel">
+        <div class="hero-content-board ios-glass">
             <h1>Elite Turnkey Construction <br><span>& Architectural Build</span></h1>
-            <p>From foundational grey structures to final luxury handovers across DHA and Islamabad's premier sectors. We engineer and build mega-environments that command prestige.</p>
-            <div class="hero-buttons">
-                <a href="#portfolio" class="btn-navy text-white" style="text-decoration: none !important;">View Mega Projects</a>
-                <a href="#contact" class="btn-outline-navy" style="text-decoration: none !important;">Book Site Consultation</a>
+            <p class="hero-subtext-forced">From foundational grey structures to final luxury handovers across DHA and Islamabad's premier sectors. We engineer and build mega-environments that command prestige.</p>
+            
+            <!-- Action Cluster with separated GET QUOTE Button -->
+            <div class="hero-action-cluster">
+                <a href="#contact" class="cta-quote-highlight">GET QUOTE</a>
+                <a href="#portfolio" class="cta-navy-solid">View Mega Projects</a>
+                <a href="#contact" class="cta-navy-outline">Book Site Consultation</a>
             </div>
         </div>
         
-        <div class="carousel-controls">
-            <button id="prevBtn" class="glass-btn"><i class="fas fa-chevron-left"></i></button>
-            <button id="nextBtn" class="glass-btn"><i class="fas fa-chevron-right"></i></button>
+        <div class="carousel-manual-nav">
+            <button id="prevBtn" class="nav-arrow-btn"><i class="fas fa-chevron-left"></i></button>
+            <button id="nextBtn" class="nav-arrow-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
-    <!-- 5. STUDIO LEGACY PROFILE MODULE -->
-    <section class="section-layout" id="about">
-        <div class="container">
-            <div class="dual-column-layout">
-                <div class="text-block glass-panel padding-large">
-                    <h2 class="section-heading">Ground-Up Engineering Excellence</h2>
-                    <p class="body-text">As a premier <strong>Islamabad-based</strong> end-to-end construction and interior firm, AL-Rahman Interior & Construction takes full ownership of your project. From the first brick of the foundation to the final polish of the wooden doors, we deliver absolute Turnkey solutions.</p>
-                    <p class="body-text mt-20">Under the visionary leadership of our Founder & CEO, Ghulam Haider, and the rigorous site command of Director of Operations Bilal Haider, our heavy workforce executes flawless grey structures and elite interior fit-outs with unmatched authority.</p>
+    <!-- ABOUT SECTION -->
+    <section class="content-section-layout" id="about">
+        <div class="site-container">
+            <div class="dual-grid-system">
+                <div class="text-narrative-block ios-glass">
+                    <h2 class="section-display-title">Ground-Up Engineering Excellence</h2>
+                    <p class="body-narrative-text dynamic-black-text">As a premier <strong>Islamabad-based</strong> end-to-end construction and interior firm, AL-Rahman Interior & Construction takes full ownership of your project. From the first brick of the foundation to the final polish of the wooden doors, we deliver absolute Turnkey solutions.</p>
+                    <p class="body-narrative-text dynamic-black-text mt-20">Under the visionary leadership of our Founder & CEO, Ghulam Haider, and the rigorous site command of Director of Operations Bilal Haider, our heavy workforce executes flawless grey structures and elite interior fit-outs with unmatched authority.</p>
                 </div>
-                <div class="visual-block">
-                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1000&q=80" alt="Turnkey Construction Engineering" class="rounded-image shadow-heavy">
+                <div class="media-display-block">
+                    <img src="https://images.pexels.com/photos/3183186/pexels-photo-3183186.jpeg?auto=compress&cs=tinysrgb&w=1000&q=80" alt="Turnkey Structural Assessment" class="bounded-media shadow-heavy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. CORE EXPERTISE MATRIX (Images + Hover Effect instead of standard icons) -->
-    <section class="section-layout tinted-bg" id="services">
-        <div class="container">
-            <div class="section-header glass-panel">
+    <!-- CORE EXPERTISE MATRIX -->
+    <section class="content-section-layout matrix-tinted" id="services">
+        <div class="site-container">
+            <div class="section-intro-header ios-glass">
                 <h2>Comprehensive Building Solutions</h2>
-                <p>Delivering high-yield structural deployments and elite finishing across the capital.</p>
+                <p class="dynamic-black-text">Delivering high-yield structural deployments and elite finishing across the capital.</p>
             </div>
             
-            <!-- Utilizing the robust portfolio grid architecture for premium service displays -->
-            <div class="portfolio-grid">
-                <!-- Service 1: Turnkey -->
-                <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Turnkey Construction">
-                    <div class="portfolio-hover">
+            <div class="interactive-image-grid">
+                <!-- Service 1 -->
+                <div class="grid-display-item glass-border">
+                    <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="Turnkey Construction">
+                    <div class="hover-reveal-overlay">
                         <h3>Turnkey Construction</h3>
-                        <p class="text-white mt-10">Complete end-to-end project management from foundation excavation to final luxury handover.</p>
+                        <p class="overlay-desc mt-10">Complete end-to-end project management from foundation excavation to final luxury handover.</p>
                     </div>
                 </div>
-                <!-- Service 2: Grey Structure -->
-                <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="Grey Structure Development">
-                    <div class="portfolio-hover">
+                <!-- Service 2 -->
+                <div class="grid-display-item glass-border">
+                    <img src="https://images.pexels.com/photos/159306/construction-site-build-architecture-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="Grey Structure Development">
+                    <div class="hover-reveal-overlay">
                         <h3>Grey Structure Development</h3>
-                        <p class="text-white mt-10">Robust foundational engineering, brickwork, and reinforced roofing systems built to last.</p>
+                        <p class="overlay-desc mt-10">Robust foundational engineering, brickwork, and reinforced roofing systems built to last.</p>
                     </div>
                 </div>
-                <!-- Service 3: Renovation -->
-                <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Home Renovation">
-                    <div class="portfolio-hover">
+                <!-- Service 3 -->
+                <div class="grid-display-item glass-border">
+                    <img src="https://images.pexels.com/photos/1018993/pexels-photo-1018993.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="Home Renovation">
+                    <div class="hover-reveal-overlay">
                         <h3>Complete Home Renovation</h3>
-                        <p class="text-white mt-10">Comprehensive legacy property architectural overhaul transforming spaces to high-status layouts.</p>
+                        <p class="overlay-desc mt-10">Comprehensive legacy property architectural overhaul transforming spaces to high-status luxury layouts.</p>
                     </div>
                 </div>
-                <!-- Service 4: Ceiling -->
-                <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="False Ceiling">
-                    <div class="portfolio-hover">
+                <!-- Service 4 -->
+                <div class="grid-display-item glass-border">
+                    <img src="https://images.pexels.com/photos/2631746/pexels-photo-2631746.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="False Ceiling">
+                    <div class="hover-reveal-overlay">
                         <h3>False Ceiling Installation</h3>
-                        <p class="text-white mt-10">Enhance your interior geometry with expertly crafted, modern design false ceilings.</p>
+                        <p class="overlay-desc mt-10">Enhance your interior geometry with expertly crafted, modern design false ceilings.</p>
                     </div>
                 </div>
-                <!-- Service 5: Marble -->
-                <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Marble Fixing">
-                    <div class="portfolio-hover">
+                <!-- Service 5 -->
+                <div class="grid-display-item glass-border">
+                    <img src="https://images.pexels.com/photos/6198655/pexels-photo-6198655.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="Marble Fixing">
+                    <div class="hover-reveal-overlay">
                         <h3>Marble Fixing</h3>
-                        <p class="text-white mt-10">High-precision technical deployment of premium marble arrays for luxurious layouts.</p>
+                        <p class="overlay-desc mt-10">High-precision technical deployment of premium marble arrays for luxurious layouts.</p>
                     </div>
                 </div>
-                <!-- Service 6: Wooden Doors -->
-                <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Wooden Doors">
-                    <div class="portfolio-hover">
+                <!-- Service 6 -->
+                <div class="grid-display-item glass-border">
+                    <img src="https://images.pexels.com/photos/1046639/pexels-photo-1046639.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="Custom Wooden Doors">
+                    <div class="hover-reveal-overlay">
                         <h3>Custom Wooden Doors</h3>
-                        <p class="text-white mt-10">Elite, high-durability bespoke solid wooden entrance structures customized to spec.</p>
+                        <p class="overlay-desc mt-10">Elite, high-durability bespoke solid wooden entrance structures customized to spec.</p>
                     </div>
                 </div>
-                <!-- Service 7: Cabinetry -->
-                <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80" alt="Cabinetry Solutions">
-                    <div class="portfolio-hover">
+                <!-- Service 7 -->
+                <div class="grid-display-item glass-border">
+                    <img src="https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="Cabinetry Solutions">
+                    <div class="hover-reveal-overlay">
                         <h3>Cabinetry Solutions</h3>
-                        <p class="text-white mt-10">Sophisticated storage systems optimized for sleek spatial efficiency and premium finish.</p>
+                        <p class="overlay-desc mt-10">Sophisticated storage systems optimized for sleek spatial efficiency and premium finish.</p>
                     </div>
                 </div>
-                <!-- Service 8: Paint & Polish -->
-                <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?auto=format&fit=crop&w=800&q=80" alt="Paint and Polish">
-                    <div class="portfolio-hover">
+                <!-- Service 8 -->
+                <div class="grid-display-item glass-border">
+                    <img src="https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="Professional Paint & Polish">
+                    <div class="hover-reveal-overlay">
                         <h3>Professional Paint & Polish</h3>
-                        <p class="text-white mt-10">Flawless chemical composite coats and wood polishing providing ultimate structural sheen.</p>
+                        <p class="overlay-desc mt-10">Flawless chemical composite coats and wood polishing providing ultimate structural sheen.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. HIGH-STATUS PORTFOLIO HOVER REVEAL SYSTEM -->
-    <section class="section-layout" id="portfolio">
+    <!-- HIGH-STATUS PORTFOLIO HOVER REVEAL SYSTEM -->
+    <section class="content-section-layout" id="portfolio">
         <div class="container">
-            <div class="section-header glass-panel">
+            <div class="section-intro-header ios-glass">
                 <h2>Our Elite Build Portfolio</h2>
-                <p>Explore our landmark structural deployments and commercial fit-outs across Islamabad's most exclusive sectors.</p>
+                <p class="dynamic-black-text">Explore our landmark structural deployments and commercial fit-outs across Islamabad's most exclusive sectors.</p>
             </div>
 
-            <div class="portfolio-grid">
-                <!-- Dé Afghan (Commercial Build) -->
-                <div class="portfolio-item glass-border">
+            <div class="interactive-image-grid">
+                <div class="grid-display-item glass-border">
                     <img src="images%20(6).jfif" alt="Dé Afghan Commercial Build DHA Phase 2">
-                    <div class="portfolio-hover">
-                        <span class="location-tag">Central Park, DHA Phase II</span>
+                    <div class="hover-reveal-overlay">
+                        <span class="location-brand-tag">Central Park, DHA Phase II</span>
                         <h3>Dé Afghan - Commercial Elite Build</h3>
                     </div>
                 </div>
-                <!-- Dhamiyal Camp (Broken link fixed!) -->
-                <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356f58?auto=format&fit=crop&w=800&q=80" alt="Dhamiyal Camp Operations">
-                    <div class="portfolio-hover">
-                        <span class="location-tag">Dhamiyal Camp</span>
+                <div class="grid-display-item glass-border">
+                    <img src="https://images.pexels.com/photos/2209529/pexels-photo-2209529.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="Dhamiyal Camp">
+                    <div class="hover-reveal-overlay">
+                        <span class="location-brand-tag">Dhamiyal Camp</span>
                         <h3>Industrial Grey Structure Synchronization</h3>
                     </div>
                 </div>
-                <!-- DHA -->
-                <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="DHA Modern Villa">
-                    <div class="portfolio-hover">
-                        <span class="location-tag">DHA (All Phases)</span>
+                <div class="grid-display-item glass-border">
+                    <img src="https://images.pexels.com/photos/534154/pexels-photo-534154.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="DHA Modern Luxury Premium Mansion">
+                    <div class="hover-reveal-overlay">
+                        <span class="location-brand-tag">DHA (All Phases)</span>
                         <h3>Turnkey Luxury Mansion Delivery</h3>
                     </div>
                 </div>
-                <!-- Gulberg Greens -->
-                <div class="portfolio-item glass-border">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Gulberg Greens Estate">
-                    <div class="portfolio-hover">
-                        <span class="location-tag">Gulberg Greens</span>
+                <div class="grid-display-item glass-border">
+                    <img src="https://images.pexels.com/photos/259685/pexels-photo-259685.jpeg?auto=compress&cs=tinysrgb&w=800&q=80" alt="Gulberg Greens Estate">
+                    <div class="hover-reveal-overlay">
+                        <span class="location-brand-tag">Gulberg Greens</span>
                         <h3>Elite Megastructure Farmhouse</h3>
                     </div>
                 </div>
@@ -207,19 +203,19 @@
         </div>
     </section>
 
-    <!-- 8. SECURE CONVERSION LEAD CONTEXT -->
-    <section class="section-layout contact-bg" id="contact">
-        <div class="container contact-wrapper">
+    <!-- CONTACT INTAKE MODULE -->
+    <section class="content-section-layout contact-surface-gradient" id="contact">
+        <div class="site-container contact-box-wrapper">
             
-            <div class="contact-info glass-panel">
-                <h2>Engineer Your Mega-Project</h2>
-                <p>Connect with our primary architectural execution office. We deploy heavy machinery and elite craftsmanship to build your vision from the ground up.</p>
-                <div class="info-line"><i class="fas fa-phone-alt"></i> 0302 511 3791</div>
-                <div class="info-line"><i class="fas fa-envelope"></i> info@alrahmaninterior.tech</div>
-                <div class="info-line"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</div>
+            <div class="text-narrative-block ios-glass">
+                <h2 class="section-display-title text-navy-forced">Engineer Your Mega-Project</h2>
+                <p class="body-narrative-text dynamic-black-text">Connect with our primary architectural execution office. We deploy heavy machinery and elite craftsmanship to build your vision from the ground up.</p>
+                <div class="info-contact-line"><i class="fas fa-phone-alt"></i> 0302 511 3791</div>
+                <div class="info-contact-line"><i class="fas fa-envelope"></i> info@alrahmaninterior.tech</div>
+                <div class="info-contact-line"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</div>
             </div>
 
-            <div class="contact-form-box glass-panel">
+            <div class="form-intake-card ios-glass">
                 <form action="https://formsubmit.co/adeelhaider8236@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="URGENT: High-Status Construction/Turnkey Lead Form Ingested">
                     <input type="hidden" name="_captcha" value="false">
@@ -228,7 +224,6 @@
                     <input type="email" name="Client_Email" placeholder="Email Address" required>
                     <input type="text" name="Client_Phone" placeholder="Phone Number" required>
                     
-                    <!-- Dropdown updated with Commercial Fit-out option -->
                     <select name="Service_Required" required>
                         <option value="" disabled selected>Select Primary Requirement</option>
                         <option value="Turnkey Construction (End-to-End)">1. Turnkey Construction (End-to-End)</option>
@@ -244,23 +239,22 @@
 
                     <textarea name="Project_Details" placeholder="Describe your plot size, location, and structural vision..." rows="5" required></textarea>
                     
-                    <button type="submit" class="btn-navy text-white w-100" style="text-decoration: none !important;">SUBMIT CONSTRUCTION INQUIRY</button>
+                    <button type="submit" class="cta-navy-solid full-width-element">SUBMIT CONSTRUCTION INQUIRY</button>
                 </form>
             </div>
             
         </div>
     </section>
 
-    <!-- 9. GLOBAL CORPORATE ACCREDITATION FOOTER -->
-    <footer class="footer glass-panel">
-        <div class="footer-content">
-            <p>&copy; 2026 AL-Rahman Interior & Construction. All rights preserved under global corporate intellectual assets.</p>
-            <p>Deployment Node: <strong>alrahmaninterior.tech</strong></p>
-            <p class="agency-credit mt-10">Systemically Scaled & Marketed by <strong>AdBis Marketing Hub</strong></p>
+    <!-- FOOTER -->
+    <footer class="master-footer-board ios-glass">
+        <div class="footer-content-stack">
+            <p class="dynamic-black-text">&copy; 2026 AL-Rahman Interior & Construction. All rights preserved under global corporate intellectual assets.</p>
+            <p class="dynamic-black-text">Deployment Node: <strong>alrahmaninterior.tech</strong></p>
+            <p class="brand-agency-credit-note">Systemically Scaled & Marketed by <strong>AdBis Marketing Hub</strong></p>
         </div>
     </footer>
 
-    <!-- Master Engine Integration Script -->
     <script src="js/script.js"></script>
 </body>
 </html>
