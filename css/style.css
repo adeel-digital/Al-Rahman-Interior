@@ -1,233 +1,404 @@
 /* ==========================================================================
-   AL-RAHMAN INTERIOR & CONSTRUCTION - MOBILE-FIRST LUXURY ENGINE
-   Preference: Mobile/Phone Screens (Default Native Layout)
-   Desktop Style: Secondary Dynamic Option
+   AL-RAHMAN INTERIOR & CONSTRUCTION — PREMIUM LIQUID GLASS ENGINE v2
+   Palette: Navy / White, with a single brass signature accent
+   Mobile-first, fixed-floating glass chrome, blueprint-corner motif
    ========================================================================== */
 
 :root {
-    --primary-navy: #0A192F;      
-    --light-navy: #172A45;     
-    --charcoal-black: #0F172A;     
-    --slate-gray-text: #334155;     
+    --navy-950: #060f1f;
+    --navy-900: #0A192F;
+    --navy-800: #122A4C;
+    --navy-700: #1C3A63;
+    --slate-text: #37455c;
     --pure-white: #FFFFFF;
-    
-    /* TRUE APPLE iOS GLASS BLUR ENGINE */
-    --glass-background: rgba(255, 255, 255, 0.82);
-    --glass-border-color: rgba(255, 255, 255, 0.65);
-    --glass-box-shadow: 0 8px 32px rgba(10, 25, 47, 0.06), inset 0 1px 2px rgba(255, 255, 255, 0.4);
-    
-    --fast-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --smooth-transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --mist: #F5F8FB;
+
+    /* Signature accent — antique brass. Used sparingly: corner marks, rules, icons */
+    --brass: #B6903F;
+    --brass-light: #E4C787;
+
+    /* Liquid glass */
+    --glass-bg: rgba(255, 255, 255, 0.80);
+    --glass-bg-strong: rgba(255, 255, 255, 0.92);
+    --glass-border: rgba(255, 255, 255, 0.55);
+    --glass-shadow: 0 10px 40px rgba(6, 15, 31, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.55);
+    --glass-shadow-dark: 0 10px 40px rgba(6, 15, 31, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.12);
+
+    --fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* GLOBAL MOBILE-RESET FRAMEWORK */
-* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+/* GLOBAL RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
 
 body, html {
     font-family: 'Inter', sans-serif;
-    color: var(--charcoal-black);
-    background: #F8FAFC;
+    color: var(--navy-950);
+    background: var(--mist);
     overflow-x: hidden !important;
     width: 100% !important;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--primary-navy); font-weight: 700; text-align: center; }
-span { color: var(--primary-navy); font-weight: 700; }
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--navy-900); font-weight: 700; text-align: center; letter-spacing: -0.01em; }
+span.accent-word { color: var(--brass); font-weight: 700; }
 
-/* DYNAMIC LIQUID GLASS */
+a { color: inherit; }
+button { font-family: inherit; cursor: pointer; }
+
+:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   LIQUID GLASS CORE + BLUEPRINT-CORNER SIGNATURE
+   ========================================================================== */
 .liquid-glass {
-    background: var(--glass-background) !important;
-    backdrop-filter: blur(25px) saturate(190%) !important;
-    -webkit-backdrop-filter: blur(25px) saturate(190%) !important;
-    border: 1px solid var(--glass-border-color) !important;
-    box-shadow: var(--glass-box-shadow) !important;
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(26px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(26px) saturate(180%) !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: var(--glass-shadow) !important;
+    position: relative;
 }
 
-/* CORE MOBILE LAYOUT SYSTEM */
+/* Blueprint corner brackets — the site's one signature detail, echoing
+   architectural drawings. Quiet by default, sharpens on hover/focus. */
+.liquid-glass::before,
+.liquid-glass::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: var(--brass);
+    border-style: solid;
+    opacity: 0.4;
+    pointer-events: none;
+    transition: opacity var(--smooth), width var(--smooth), height var(--smooth);
+    z-index: 3;
+}
+.liquid-glass::before { top: 9px; left: 9px; border-width: 2px 0 0 2px; border-radius: 3px 0 0 0; }
+.liquid-glass::after  { bottom: 9px; right: 9px; border-width: 0 2px 2px 0; border-radius: 0 0 3px 0; }
+.liquid-glass:hover::before,
+.liquid-glass:hover::after,
+.liquid-glass:focus-within::before,
+.liquid-glass:focus-within::after {
+    opacity: 0.9;
+    width: 24px;
+    height: 24px;
+}
+
+/* Glass sheen sweep on hover for interactive panels */
+.glass-interactive { overflow: hidden; }
+.glass-interactive .sheen {
+    position: absolute; inset: 0;
+    background: linear-gradient(115deg, transparent 20%, rgba(255,255,255,0.35) 40%, transparent 60%);
+    transform: translateX(-120%);
+    transition: transform 0.9s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+.glass-interactive:hover .sheen { transform: translateX(120%); }
+
+/* ==========================================================================
+   CORE LAYOUT
+   ========================================================================== */
 .architectural-section-spacing { padding: 70px 0; position: relative; width: 100%; }
 .fluid-site-container { width: 92%; margin: 0 auto; }
-.background-slate-tint { background: linear-gradient(to bottom, #F1F5F9, #E2E8F0); }
-.corporate-gradient-surface { background: linear-gradient(135deg, #0A192F, #172A45); }
+.background-slate-tint { background: linear-gradient(to bottom, #F1F5F9, #E4E9F0); }
+.corporate-gradient-surface { background: linear-gradient(150deg, var(--navy-900), var(--navy-700)); }
 .mt-20 { margin-top: 15px; }
 .full-width-block { width: 100% !important; }
 
-/* 📱 NATIVE PHONE INTERFACE LAYER (DEFAULT) */
-
-/* FIXED MOBILE LOGO HEADER BAR */
-.master-mobile-logo-bar {
-    position: absolute; top: 15px; left: 50%; transform: translateX(-50%);
-    width: 92%; padding: 12px; border-radius: 20px; z-index: 1200;
-    display: flex; justify-content: center; align-items: center;
+.eyebrow {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 10px;
 }
-.logo-anchor { display: block; }
-.logo-anchor img { height: 62px; width: auto; object-fit: contain; display: block; margin: 0 auto; }
 
-/* FIXED MOBILE 4-BUTTON BALANCED NAVIGATION PILL */
+/* ==========================================================================
+   SCROLL REVEAL (progressive, IntersectionObserver-driven)
+   ========================================================================== */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   📱 FIXED-FLOATING BRAND CHROME
+   Both the logo badge and nav are position:fixed so they genuinely float
+   above the page while scrolling — the same behaviour as the WhatsApp button.
+   ========================================================================== */
+.master-mobile-logo-bar {
+    position: fixed; top: 14px; left: 50%; transform: translateX(-50%);
+    width: 92%; max-width: 420px; padding: 10px 18px; border-radius: 22px; z-index: 1250;
+    display: flex; justify-content: center; align-items: center;
+    animation: floatBadge 4.5s ease-in-out infinite;
+}
+@keyframes floatBadge {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-4px); }
+}
+
+.logo-anchor { display: flex; align-items: center; gap: 12px; text-decoration: none; width: 100%; justify-content: center; }
+.logo-mark { width: 46px; height: 46px; flex-shrink: 0; }
+.logo-text-stack { display: flex; flex-direction: column; line-height: 1.15; }
+.logo-word {
+    font-family: 'Playfair Display', serif; font-weight: 700; color: var(--navy-900);
+    font-size: 1.05rem; letter-spacing: 0.5px; white-space: nowrap;
+}
+.logo-sub {
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 8.5px;
+    letter-spacing: 1.6px; text-transform: uppercase; color: var(--brass);
+}
+
 .master-mobile-navbar {
-    position: absolute; top: 115px; left: 50%; right: auto; transform: translateX(-50%);
-    width: 92%; padding: 8px; border-radius: 20px; z-index: 1190;
+    position: fixed; top: 76px; left: 50%; right: auto; transform: translateX(-50%);
+    width: 92%; padding: 8px; border-radius: 20px; z-index: 1240;
     display: flex; justify-content: center; align-items: center;
 }
 .nav-links-wrapper { list-style: none; display: flex; width: 100%; justify-content: space-around; gap: 0; align-items: center; }
 
 .nav-pill-item {
-    color: var(--primary-navy) !important;
+    color: var(--navy-900) !important;
     text-decoration: none; font-weight: 700; font-size: 12px;
     text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 14px; border-radius: 30px;
-    border: 1px solid transparent; transition: var(--fast-transition);
+    border: 1px solid transparent; transition: var(--fast);
 }
 .nav-pill-item:hover, .nav-pill-item.active {
-    background: var(--pure-white); color: var(--primary-navy) !important;
-    border-color: rgba(10,25,47,0.1); box-shadow: 0 4px 12px rgba(10, 25, 47, 0.1);
+    background: var(--navy-900); color: var(--pure-white) !important;
+    border-color: var(--navy-900); box-shadow: 0 4px 14px rgba(10, 25, 47, 0.25);
 }
 
-/* THUMB REACH DUAL FLOATING INTERACTIONS ACTION BLOCK */
+.nav-quote-cta {
+    display: none; /* shown on desktop only */
+    background: var(--brass); color: var(--navy-950) !important;
+    font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 10px 20px; border-radius: 30px; text-decoration: none; white-space: nowrap;
+    transition: var(--fast);
+}
+.nav-quote-cta:hover { background: var(--brass-light); transform: translateY(-1px); }
+
+/* THUMB-REACH FLOATING ACTIONS (Get Quote + WhatsApp) */
 .master-floating-actions-holder {
     position: fixed; bottom: 20px; right: 20px;
-    display: flex; flex-direction: column; gap: 12px; z-index: 1300;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 12px; z-index: 1300;
 }
 
 .executive-floating-quote-trigger {
-    background: var(--primary-navy); color: var(--pure-white) !important;
+    background: var(--navy-900); color: var(--pure-white) !important;
     text-decoration: none !important; font-weight: 700; font-size: 12px;
-    text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 18px;
+    text-transform: uppercase; letter-spacing: 0.5px; padding: 13px 20px;
     border-radius: 50px; display: flex; align-items: center; gap: 8px;
-    box-shadow: 0 6px 20px rgba(10, 25, 47, 0.3); transition: var(--smooth-transition);
+    box-shadow: 0 8px 24px rgba(10, 25, 47, 0.38); transition: var(--smooth);
+    position: relative;
+}
+.executive-floating-quote-trigger::before {
+    content: ''; position: absolute; inset: -4px; border-radius: 50px;
+    border: 1.5px solid var(--brass); opacity: 0; transition: var(--smooth);
 }
 .executive-floating-quote-trigger:hover { transform: translateY(-2px); }
+.executive-floating-quote-trigger:hover::before { opacity: 0.6; inset: -6px; }
 
-.executive-whatsapp-trigger { 
-    background: #25D366; color: var(--pure-white) !important; 
-    width: 50px; height: 50px; border-radius: 50%; 
-    display: flex; justify-content: center; align-items: center; 
+.executive-whatsapp-trigger {
+    background: #25D366; color: var(--pure-white) !important;
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
     font-size: 26px; align-self: flex-end;
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3); transition: var(--smooth-transition); 
-    text-decoration: none !important; 
+    box-shadow: 0 8px 22px rgba(37, 211, 102, 0.4); transition: var(--smooth);
+    text-decoration: none !important;
+    animation: pulseWhatsapp 3s ease-in-out infinite;
 }
-.executive-whatsapp-trigger:hover { transform: scale(1.05); }
+@keyframes pulseWhatsapp {
+    0%, 100% { box-shadow: 0 8px 22px rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 8px 22px rgba(37, 211, 102, 0.7), 0 0 0 8px rgba(37, 211, 102, 0.08); }
+}
+.executive-whatsapp-trigger:hover { transform: scale(1.06); }
 
-/* HORIZONTAL SOCIALS FOOT ELEMENT FOR MOBILE SPACE */
 .corporate-social-mobile-bar {
-    position: fixed; left: 20px; bottom: 20px;
+    position: fixed; left: 16px; bottom: 20px;
     display: flex; flex-direction: row; z-index: 1000;
     border-radius: 30px; padding: 4px 8px;
 }
-.social-icon { font-size: 16px; padding: 8px 12px; text-align: center; color: var(--primary-navy); }
+.social-icon { font-size: 16px; padding: 8px 12px; text-align: center; color: var(--navy-900); }
 
-/* PHONE STREAM TEXT BLOCK CONTRAST SYSTEM */
-.body-copy-visible { color: var(--slate-gray-text) !important; font-weight: 600; font-size: 1rem; text-align: center; }
-.forced-navy-color { color: var(--primary-navy) !important; }
+/* PHONE TEXT CONTRAST */
+.body-copy-visible { color: var(--slate-text) !important; font-weight: 500; font-size: 1rem; text-align: center; }
+.forced-navy-color { color: var(--navy-900) !important; }
 
-/* EXECUTIVE FULL WIDTH PHONE CALLABLE INTERACTION BUTTONS */
+/* BUTTONS */
 .action-btn-navy-solid, .action-btn-navy-outline {
     padding: 15px 30px; border-radius: 12px; font-weight: 700; text-transform: uppercase;
     letter-spacing: 0.5px; font-size: 12px; text-align: center; display: inline-block; width: 100%;
+    transition: var(--smooth); position: relative; overflow: hidden;
 }
-.action-btn-navy-solid { background: var(--primary-navy); color: var(--pure-white) !important; box-shadow: 0 4px 12px rgba(10,25,47,0.2); }
-.action-btn-navy-outline { background: transparent; color: var(--primary-navy) !important; border: 2px solid var(--primary-navy); }
+.action-btn-navy-solid {
+    background: linear-gradient(120deg, var(--navy-900), var(--navy-700));
+    color: var(--pure-white) !important; box-shadow: 0 6px 18px rgba(10,25,47,0.28);
+}
+.action-btn-navy-solid:hover { box-shadow: 0 10px 26px rgba(10,25,47,0.38); transform: translateY(-2px); }
+.action-btn-navy-outline {
+    background: rgba(255,255,255,0.5); color: var(--navy-900) !important; border: 2px solid var(--navy-900);
+}
+.action-btn-navy-outline:hover { background: var(--navy-900); color: var(--pure-white) !important; }
 
-/* HERO VIEWPORT - MOBILE COMFORT SCALING */
-.hero-fullscreen-viewport { padding-top: 195px; height: auto; min-height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+/* HERO */
+.hero-fullscreen-viewport { padding-top: 175px; height: auto; min-height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-bottom: 40px; }
 .carousel-background-engine { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-.carousel-slide-frame { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease-in-out; }
-.carousel-slide-frame.active { opacity: 1; }
+.carousel-slide-frame {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover; background-position: center; opacity: 0;
+    transform: scale(1.08);
+    transition: opacity 1.4s ease-in-out, transform 7s linear;
+}
+.carousel-slide-frame.active { opacity: 1; transform: scale(1); }
+.carousel-background-engine::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(6,15,31,0.35) 0%, rgba(6,15,31,0.15) 45%, rgba(6,15,31,0.55) 100%);
+}
 
-.hero-overlay-content-card { text-align: center; padding: 35px 20px; border-radius: 24px; width: 92%; z-index: 2; margin: 20px auto; }
-.hero-overlay-content-card h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 18px; color: var(--primary-navy); }
-.hero-overlay-content-card p { font-size: 1rem; color: #000000; margin-bottom: 25px; font-weight: 700; }
+.hero-overlay-content-card { text-align: center; padding: 35px 22px; border-radius: 26px; width: 92%; z-index: 2; margin: 20px auto; }
+.hero-overlay-content-card h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 18px; color: var(--navy-900); }
+.hero-overlay-content-card p { font-size: 1rem; color: #14213a; margin-bottom: 25px; font-weight: 600; }
 .hero-button-cluster { display: flex; flex-direction: column; gap: 12px; width: 100%; }
 
-/* GRID ARCHITECTURE FORCE STACK FOR VERTICAL PHONE SCROLLING */
+/* STATS STRIP */
+.stats-strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 30px 20px; border-radius: 22px; }
+.stat-block { text-align: center; }
+.stat-number { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 2rem; color: var(--navy-900); display: flex; align-items: baseline; justify-content: center; gap: 2px; }
+.stat-number .stat-suffix { color: var(--brass); font-size: 1.4rem; }
+.stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--slate-text); font-weight: 600; margin-top: 4px; }
+
+/* GRID / TITLES */
 .split-grid-layout { display: flex; flex-direction: column; gap: 35px; }
 .display-title-large { font-size: 2.1rem; margin-bottom: 20px; line-height: 1.25; text-align: center; }
 .fluid-responsive-image { width: 100%; border-radius: 20px; display: block; }
-.shadow-premium { box-shadow: 0 15px 35px rgba(10,25,47,0.06); }
+.shadow-premium { box-shadow: 0 15px 35px rgba(10,25,47,0.10); }
 
 .section-display-header { text-align: center; padding: 30px 20px; border-radius: 20px; margin-bottom: 40px; }
 .section-display-header h2 { font-size: 2.1rem; margin-bottom: 8px; }
 
-/* PREMIUM VERTICAL CARD CHANNELS */
+/* SERVICE / PORTFOLIO CARDS */
 .premium-interactive-grid { display: flex; flex-direction: column; gap: 20px; }
-.grid-card-item { position: relative; border-radius: 20px; overflow: hidden; height: 340px; background: #E2E8F0; border: 1px solid rgba(255,255,255,0.7); }
-.grid-card-item img { width: 100%; height: 100%; object-fit: cover; }
+.grid-card-item {
+    position: relative; border-radius: 20px; overflow: hidden; height: 340px;
+    background: #E2E8F0; border: 1px solid rgba(255,255,255,0.7);
+    transition: transform var(--smooth), box-shadow var(--smooth);
+}
+.grid-card-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+.grid-card-item:active img { transform: scale(1.05); }
 
-/* Mobile Mask Layer: Permanently Visible For Fast High-Value Context Ingestion */
 .card-hover-mask-overlay {
     position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to top, rgba(10, 25, 47, 0.98) 0%, rgba(10, 25, 47, 0.7) 75%, transparent 100%);
+    background: linear-gradient(to top, rgba(6, 15, 31, 0.96) 0%, rgba(6, 15, 31, 0.55) 70%, transparent 100%);
     display: flex; flex-direction: column; justify-content: flex-end; padding: 25px 20px;
 }
-.card-hover-mask-overlay h3 { font-size: 1.4rem; color: var(--pure-white); text-align: left; font-family: 'Playfair Display', serif; }
-.mask-description-text { font-size: 0.9rem; color: rgba(255, 255, 255, 0.9) !important; font-weight: 500; text-align: left; }
-.location-badge-pill { font-size: 10px; font-weight: 700; color: var(--pure-white); background: #25D366; padding: 4px 12px; border-radius: 20px; align-self: flex-start; margin-bottom: 10px; text-transform: uppercase; }
+.card-hover-mask-overlay h3 { font-size: 1.35rem; color: var(--pure-white); text-align: left; font-family: 'Playfair Display', serif; }
+.mask-description-text { font-size: 0.88rem; color: rgba(255, 255, 255, 0.88) !important; font-weight: 500; text-align: left; margin-top: 6px; }
+.location-badge-pill {
+    font-size: 10px; font-weight: 700; color: var(--navy-950);
+    background: var(--brass); padding: 4px 12px; border-radius: 20px;
+    align-self: flex-start; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.4px;
+}
 
-/* CONTACT LEAD INTAKE CARD FOR PHONE FOCUS */
+/* CONTACT */
 .contact-flex-wrapper { display: flex; flex-direction: column; gap: 40px; }
-.contact-info-row-item { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 15px; font-size: 1rem; font-weight: 700; color: var(--primary-navy); }
-.contact-info-row-item i { font-size: 1.1rem; background: rgba(10, 25, 47, 0.05); padding: 10px; border-radius: 50%; }
+.contact-info-row-item { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 15px; font-size: 1rem; font-weight: 700; color: var(--navy-900); }
+.contact-info-row-item i { font-size: 1.1rem; background: rgba(182, 144, 63, 0.12); color: var(--brass); padding: 10px; border-radius: 50%; }
 
 .lead-intake-card { padding: 30px 20px; border-radius: 20px; }
 .lead-intake-card input, .lead-intake-card select, .lead-intake-card textarea {
-    width: 100%; padding: 14px 18px; margin-bottom: 15px; background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(10, 25, 47, 0.1); border-radius: 12px; color: var(--charcoal-black);
-    font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+    width: 100%; padding: 14px 18px; margin-bottom: 15px; background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(10, 25, 47, 0.12); border-radius: 12px; color: var(--navy-950);
+    font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; transition: var(--fast);
 }
+.lead-intake-card input:focus, .lead-intake-card select:focus, .lead-intake-card textarea:focus {
+    outline: none; border-color: var(--brass); box-shadow: 0 0 0 3px rgba(182,144,63,0.15);
+}
+.form-note { font-size: 12px; color: rgba(255,255,255,0.6); text-align: center; margin-top: 8px; }
 
 .master-corporate-footer { width: 92%; margin: 0 auto 20px; padding: 25px 15px; border-radius: 20px; text-align: center; }
-.footer-stack-wrapper p { font-weight: 600; font-size: 12px; color: var(--charcoal-black); }
-.agency-branding-credit { color: var(--primary-navy); font-weight: 700; margin-top: 8px; }
-
+.footer-stack-wrapper p { font-weight: 600; font-size: 12px; color: var(--navy-950); }
+.agency-branding-credit { color: var(--navy-900); font-weight: 700; margin-top: 8px; }
 
 /* ==========================================================================
-   💻 DESKTOP VIEW VIEWPORT RESPONSIVE LAYER (SECONDARY OPTION)
+   💻 DESKTOP LAYER
    ========================================================================== */
 @media (min-width: 1025px) {
     .architectural-section-spacing { padding: 120px 0; }
     .fluid-site-container { width: 90%; max-width: 1250px; }
-    
-    /* Reposition Master Top Menu Bars For Desktop Grid Structure */
-    .master-mobile-logo-bar { position: fixed; top: 25px; left: 40px; width: auto; padding: 14px 28px; border-radius: 24px; transform: none; }
-    .logo-anchor img { height: 85px; }
 
-    .master-mobile-navbar { position: fixed; top: 25px; right: 40px; left: auto; transform: none; width: auto; padding: 10px 20px; border-radius: 50px; }
-    .nav-links-wrapper { width: auto; gap: 14px; }
-    .nav-pill-item { font-size: 14px; padding: 12px 24px; border-radius: 40px; }
-    .nav-pill-item:hover { transform: translateY(-1px); box-shadow: 0 5px 15px rgba(10,25,47,0.12); }
+    .master-mobile-logo-bar {
+        top: 25px; left: 40px; width: auto; max-width: none; padding: 12px 26px; border-radius: 24px; transform: none;
+        animation: floatBadgeDesktop 4.5s ease-in-out infinite;
+    }
+    @keyframes floatBadgeDesktop {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+    .logo-mark { width: 54px; height: 54px; }
+    .logo-word { font-size: 1.3rem; }
+    .logo-sub { font-size: 9.5px; }
+
+    .master-mobile-navbar { top: 25px; right: 40px; left: auto; transform: none; width: auto; padding: 10px 12px 10px 20px; border-radius: 50px; gap: 6px; display: flex; }
+    .nav-links-wrapper { width: auto; gap: 10px; }
+    .nav-pill-item { font-size: 14px; padding: 12px 22px; border-radius: 40px; }
+    .nav-pill-item:hover { transform: translateY(-1px); }
+    .nav-quote-cta { display: inline-block; }
 
     .master-floating-actions-holder { bottom: 30px; right: 30px; gap: 15px; }
-    .executive-floating-quote-trigger { font-size: 14px; padding: 16px 24px; }
-    .executive-floating-quote-trigger:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(10, 25, 47, 0.45); }
-    .executive-whatsapp-trigger { width: 55px; height: 55px; font-size: 28px; }
-    .executive-whatsapp-trigger:hover { transform: scale(1.08) rotate(-8deg); }
+    .executive-floating-quote-trigger { font-size: 14px; padding: 16px 26px; }
+    .executive-floating-quote-trigger:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(10, 25, 47, 0.4); }
+    .executive-whatsapp-trigger { width: 56px; height: 56px; font-size: 28px; }
+    .executive-whatsapp-trigger:hover { transform: scale(1.08) rotate(-6deg); }
 
-    .corporate-social-mobile-bar { position: fixed; left: 0; top: 50%; bottom: auto; transform: translateY(-50%); flex-direction: column; border-radius: 0 16px 16px 0; padding: 10px 0; }
+    .corporate-social-mobile-bar { left: 0; top: 50%; bottom: auto; transform: translateY(-50%); flex-direction: column; border-radius: 0 16px 16px 0; padding: 10px 0; }
     .social-icon { font-size: 20px; padding: 12px 20px; }
-    .social-icon:hover { background: var(--primary-navy); color: var(--pure-white) !important; border-radius: 8px; }
+    .social-icon:hover { background: var(--navy-900); color: var(--pure-white) !important; border-radius: 8px; }
 
     .hero-fullscreen-viewport { padding-top: 0; height: 100vh; }
-    .hero-overlay-content-card { padding: 60px; border-radius: 32px; max-width: 850px; margin-top: 100px; }
-    .hero-overlay-content-card h1 { font-size: 3.8rem; }
-    .hero-overlay-content-card p { font-size: 1.25rem; }
+    .hero-overlay-content-card { padding: 60px; border-radius: 32px; max-width: 780px; margin-top: 60px; }
+    .hero-overlay-content-card h1 { font-size: 3.6rem; }
+    .hero-overlay-content-card p { font-size: 1.2rem; }
     .hero-button-cluster { flex-direction: row; gap: 20px; }
     .action-btn-navy-solid, .action-btn-navy-outline { width: auto; font-size: 13px; padding: 16px 36px; }
 
+    .stats-strip { grid-template-columns: repeat(4, 1fr); max-width: 780px; margin: 26px auto 0; padding: 26px 40px; }
+    .stat-number { font-size: 2.4rem; }
+
     .split-grid-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; }
     .display-title-large { font-size: 2.8rem; text-align: left; }
-    .body-copy-visible { text-align: left; font-size: 1.1rem; }
+    .body-copy-visible { text-align: left; font-size: 1.08rem; }
     .section-display-header { padding: 45px; margin-bottom: 60px; }
     .section-display-header h2 { font-size: 2.6rem; }
 
     .premium-interactive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
     .grid-card-item { height: 390px; }
-    .card-hover-mask-overlay { opacity: 0; transform: translateY(15px); transition: var(--smooth-transition); }
-    .grid-card-item:hover img { transform: scale(1.06); }
+    .card-hover-mask-overlay { opacity: 0; transform: translateY(15px); transition: var(--smooth); }
+    .grid-card-item:hover img { transform: scale(1.08); }
     .grid-card-item:hover .card-hover-mask-overlay { opacity: 1; transform: translateY(0); }
 
     .contact-flex-wrapper { display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; }
     .contact-info-row-item { justify-content: flex-start; font-size: 1.1rem; }
     .lead-intake-card { padding: 45px; border-radius: 28px; }
-    
+
     .master-corporate-footer { max-width: 1250px; margin-bottom: 30px; padding: 35px; }
     .footer-stack-wrapper p { font-size: 14px; }
+}
+
+/* Navbar gains a touch more opacity once the page has scrolled, so it reads
+   clearly over the moving hero image without waiting for hover. */
+.master-mobile-navbar.is-scrolled,
+.master-mobile-logo-bar.is-scrolled {
+    box-shadow: 0 10px 30px rgba(6,15,31,0.18) !important;
 }
