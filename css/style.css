@@ -12,8 +12,8 @@
     --white-pure: #FFFFFF;
     
     /* Ultimate White Glassmorphism Engine (MORE TRANSPARENT) */
-    --glass-bg: rgba(255, 255, 255, 0.40);           /* Reduced opacity from 0.75 to 0.40 */
-    --glass-bg-hover: rgba(255, 255, 255, 0.55);     /* Reduced hover opacity from 0.90 to 0.55 */
+    --glass-bg: rgba(255, 255, 255, 0.40);           /* Reduced opacity for premium glass feel */
+    --glass-bg-hover: rgba(255, 255, 255, 0.55);     /* Subtle solid hover state */
     --glass-border: rgba(255, 255, 255, 0.45);       /* Softer white border */
     --glass-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);  
     
@@ -43,39 +43,8 @@ span { color: var(--navy-blue); font-weight: 700; }
 /* --- CORE GLASS PANEL CLASS (ADJUSTED BLUR) --- */
 .glass-panel {
     background: var(--glass-bg);
-    backdrop-filter: blur(15px); /* Reduced from 25px so background is more visible */
+    backdrop-filter: blur(15px); /* Allows background layers to pop through */
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
-}
-    /* Social Brand Colors */
-    --fb-color: #1877F2;
-    --ig-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    
-    /* System Timings */
-    --transition-fast: 0.3s ease;
-    --transition-smooth: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* --- RESET & TYPOGRAPHY --- */
-* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-
-body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text-black);
-    background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80') fixed center/cover;
-    overflow-x: hidden;
-    line-height: 1.6;
-}
-
-h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--navy-blue); font-weight: 600; }
-span { color: var(--navy-blue); font-weight: 700; }
-
-/* --- CORE GLASS PANEL CLASS --- */
-.glass-panel {
-    background: var(--glass-bg);
-    backdrop-filter: blur(25px); /* Heavy blur for pure frosted glass */
-    -webkit-backdrop-filter: blur(25px);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
 }
@@ -88,6 +57,7 @@ span { color: var(--navy-blue); font-weight: 700; }
 .mt-20 { margin-top: 20px; }
 .mt-40 { margin-top: 40px; }
 .padding-large { padding: 50px; border-radius: 20px; }
+.text-white { color: #ffffff !important; }
 
 /* --- BUTTONS & LINKS --- */
 .btn-navy, .btn-outline-navy {
@@ -104,6 +74,20 @@ span { color: var(--navy-blue); font-weight: 700; }
 
 .w-100 { width: 100%; }
 .center-btn-wrapper { display: flex; justify-content: center; }
+
+/* Special Top CTA Button */
+.nav-cta-btn {
+    background: var(--navy-blue) !important;
+    color: #ffffff !important;
+    padding: 12px 28px !important;
+    border-radius: 8px !important;
+    transition: 0.3s ease !important;
+}
+.nav-cta-btn:hover {
+    background: #172A45 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(10, 25, 47, 0.2);
+}
 
 /* --- SOCIAL WIDGETS --- */
 .social-sidebar {
@@ -123,14 +107,25 @@ span { color: var(--navy-blue); font-weight: 700; }
 }
 .floating-whatsapp:hover { transform: scale(1.1) rotate(-10deg); }
 
-/* --- DYNAMIC NAVBAR --- */
+/* --- DYNAMIC NAVBAR (FIXED ALIGNMENT & SIZE) --- */
 .navbar {
     position: fixed; width: 92%; max-width: 1400px; top: 25px; left: 50%; transform: translateX(-50%);
-    z-index: 999; padding: 12px 40px; border-radius: 20px; transition: var(--transition-smooth);
+    z-index: 999; padding: 5px 40px; border-radius: 20px; transition: var(--transition-smooth);
 }
-.nav-container { display: flex; justify-content: space-between; align-items: center; }
-.nav-logo { height: 65px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
-.nav-links { list-style: none; display: flex; gap: 35px; align-items: center; }
+.nav-container { 
+    display: flex; justify-content: space-between; align-items: center; width: 100%; 
+}
+.logo { display: flex; align-items: center; }
+.nav-logo { 
+    height: 85px; /* Large scale premium logo sizing */
+    width: auto; 
+    object-fit: contain; 
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); 
+}
+.nav-links { 
+    list-style: none; display: flex; gap: 35px; align-items: center; 
+    margin-left: auto; /* Locks buttons perfectly to the right */
+}
 .nav-links a { color: var(--text-black); text-decoration: none; font-weight: 600; transition: var(--transition-fast); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
 .nav-links a:hover, .nav-links a.active { color: var(--navy-blue); }
 
@@ -226,19 +221,4 @@ span { color: var(--navy-blue); font-weight: 700; }
     .hero-content { padding: 40px 20px; }
     .hero-content h1 { font-size: 2.5rem; }
     .social-sidebar { display: none; }
-}
-/* ADD THIS TO YOUR CSS FILE */
-.nav-cta-btn {
-    background: var(--navy-blue) !important;
-    color: #ffffff !important;
-    padding: 12px 28px !important;
-    border-radius: 8px !important;
-    transition: 0.3s ease !important;
-}
-.nav-cta-btn:hover {
-    background: #172A45 !important;
-    transform: translateY(-2px);
-}
-.text-white {
-    color: #ffffff !important;
 }
