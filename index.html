@@ -4,268 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AL-Rahman Interior | Elite Architectural Design & Fit-outs</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="social-sidebar">
-        <a href="https://www.facebook.com/Alrahmaninterior" target="_blank" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/alrahman_interior/?hl=en" target="_blank" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-link" title="TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <div class="social-sidebar glass-panel">
+        <a href="https://www.facebook.com/Alrahmaninterior" target="_blank" class="social-link fb" title="Follow on Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/alrahman_interior/?hl=en" target="_blank" class="social-link ig" title="Follow on Instagram"><i class="fab fa-instagram"></i></a>
     </div>
 
-    <a href="https://wa.me/923025113791" target="_blank" class="floating-whatsapp" title="Chat with Us">
+    <a href="https://wa.me/923025113791" target="_blank" class="floating-whatsapp" title="Chat with AL-Rahman Interior">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <nav class="navbar" id="navbar">
+    <nav class="navbar glass-panel" id="navbar">
         <div class="nav-container">
             <div class="logo">
-                <h2>AL-Rahman<br><span>Interior</span></h2>
+                <a href="index.html">
+                    <img src="ARI Logo.png" alt="AL-Rahman Interior Logo" class="nav-logo">
+                </a>
             </div>
             <ul class="nav-links">
-                <li><a href="#home" class="nav-btn active">Home</a></li>
-                <li><a href="#about" class="nav-btn">About Studio</a></li>
-                <li><a href="#services" class="nav-btn">Services</a></li>
-                <li><a href="#portfolio" class="nav-btn">Our Projects</a></li>
-                <li><a href="#contact" class="nav-btn-contact">Get Estimate</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="contact.html" class="btn-navy">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section id="home" class="hero-viewport">
-        <div class="hero-mask"></div>
-        <div class="hero-panel animate-fade-in">
-            <p class="hero-subtitle">ARCHITECTURAL EXCELLENCE</p>
-            <h1>Crafting High-Status<br>Spatial Masterpieces</h1>
-            <p class="hero-description">From complex structural deployment at Dhamiyal Camp to elite luxury living layouts across DHA and Islamabad's premier sectors.</p>
-            <div class="hero-action-row">
-                <a href="#portfolio" class="action-btn-gold">EXPLORE PORTFOLIO</a>
-                <a href="#contact" class="action-btn-trans">BOOK BRIEFING</a>
+    <section class="hero" id="home">
+        <div class="carousel-container">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1920&q=80');"></div>
+        </div>
+
+        <div class="hero-content glass-panel">
+            <h1>Engineering Modern <br><span>Space & Luxury</span></h1>
+            <p>From complex structural deployments at Dhamiyal Camp to elite luxury living layouts across DHA and Islamabad's premier sectors. We engineer environments that command prestige.</p>
+            <div class="hero-buttons">
+                <a href="portfolio.html" class="btn-navy">View Masterpieces</a>
+                <a href="contact.html" class="btn-outline-navy">Book Consultation</a>
             </div>
+        </div>
+        
+        <div class="carousel-controls">
+            <button id="prevBtn" class="glass-btn"><i class="fas fa-chevron-left"></i></button>
+            <button id="nextBtn" class="glass-btn"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
-    <section id="about" class="section-layout standard-bg">
-        <div class="main-container">
+    <section class="section-layout">
+        <div class="container">
             <div class="dual-column-layout">
-                <div class="text-block">
-                    <p class="section-tag">THE STUDIO LEGACY</p>
-                    <h2 class="section-main-heading">Decades of Visionary Execution & Structural Grit</h2>
-                    <p class="body-paragraph">AL-Rahman Interior is built on precision engineering, architectural depth, and absolute transparency. Led by our Founder & CEO, Ghulam Haider, the studio has transformed the landscape of premium interior execution. Collaborating seamlessly on site aesthetics, Director of Operations Bilal Haider commands on-ground engineering teams, orchestrating complex workforces to turn raw blueprints into flawless physical spaces.</p>
-                    <p class="body-paragraph">We utilize uncommon, elite material workflows—integrating high-grade PU panels, precision-milled MDF layers, integrated commercial LED arrays, and bespoke textures that shield your structure while projecting global luxury status.</p>
-                    
-                    <div class="metrics-row">
-                        <div class="metric-card">
-                            <h3>150+</h3>
-                            <p>Projects Delivered</p>
-                        </div>
-                        <div class="metric-card">
-                            <h3>100%</h3>
-                            <p>Bespoke Sourcing</p>
-                        </div>
-                    </div>
+                <div class="text-block glass-panel padding-large">
+                    <h2 class="section-heading">The Foundation of Excellence</h2>
+                    <p class="body-text">AL-Rahman Interior is built on absolute precision and architectural depth. Led by our Founder & CEO, Ghulam Haider, the studio has redefined premium interior execution. Working seamlessly on-site, Director of Operations Bilal Haider commands the workforce, orchestrating complex material deployments to turn raw blueprints into flawless physical spaces.</p>
+                    <a href="team.html" class="link-navy-bold mt-20">Meet the Leadership <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="visual-block-wrapper">
-                    <div class="visual-frame">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="Executive Meeting Space Design">
-                    </div>
+                <div class="visual-block">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="Executive Meeting Space Design" class="rounded-image shadow-heavy">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="section-layout tinted-bg">
-        <div class="main-container">
-            <div class="center-heading-block">
-                <p class="section-tag text-center">OUR EXPERTISE</p>
-                <h2 class="section-main-heading text-center">Bespoke Structural Solutions</h2>
-                <div class="accent-separator"></div>
+    <section class="section-layout tinted-bg">
+        <div class="container">
+            <div class="section-header glass-panel">
+                <h2>Bespoke Structural Solutions</h2>
+                <p>Delivering high-status spatial layouts and elite material integrations.</p>
             </div>
-
-            <div class="triple-grid-layout">
-                <div class="service-interactive-card">
-                    <div class="icon-header-box"><i class="fas fa-couch"></i></div>
-                    <h3>Luxury Residential Masterpieces</h3>
-                    <p>Complete structural architecture, space-planning, and ambient lighting synchronization for high-end villas and custom penthouses.</p>
-                </div>
-                <div class="service-interactive-card">
-                    <div class="icon-header-box"><i class="fas fa-building"></i></div>
-                    <h3>Corporate Lounges & Fit-outs</h3>
-                    <p>Sophisticated commercial layouts engineered to enhance spatial efficiency and echo corporate prestige for global founders.</p>
-                </div>
-                <div class="service-interactive-card">
-                    <div class="icon-header-box"><i class="fas fa-tools"></i></div>
-                    <h3>Bespoke Renovation Engineering</h3>
-                    <p>Re-engineering legacy properties with modern design interfaces, advanced acoustic treatments, and high-end surface finishes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="section-layout standard-bg">
-        <div class="main-container">
-            <div class="center-heading-block">
-                <p class="section-tag text-center">CASE STUDIES</p>
-                <h2 class="section-main-heading text-center">Our Elite Project Portfolio</h2>
-                <div class="accent-separator"></div>
-            </div>
-
-            <div class="portfolio-rich-grid">
-                
-                <div class="project-showcase-wrapper">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Dhamiyal Camp Site">
-                    <div class="hover-info-panel">
-                        <div class="hover-panel-content">
-                            <span class="project-location-tag">Dhamiyal Camp Project</span>
-                            <h3>Industrial & Material Structural Deployment</h3>
-                            <p>Complete site material synchronization, custom panelling systems, and massive industrial-grade design layouts deployed to absolute perfection.</p>
-                            <span class="view-meta-year">Completed &bull; 2025</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-showcase-wrapper">
-                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="DHA Elite Residence">
-                    <div class="hover-info-panel">
-                        <div class="hover-panel-content">
-                            <span class="project-location-tag">DHA (Phases 1-8)</span>
-                            <h3>Premium Luxury Mansions & Villas</h3>
-                            <p>High-end structural renovations, sophisticated drop-ceiling lighting configurations, and premium MDF architectural layers implemented for elite clients.</p>
-                            <span class="view-meta-year">Completed &bull; 2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-showcase-wrapper">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Gulberg Greens Farmhouse">
-                    <div class="hover-info-panel">
-                        <div class="hover-panel-content">
-                            <span class="project-location-tag">Gulberg Greens</span>
-                            <h3>Elite Megastructure Farmhouse Interieur</h3>
-                            <p>Bespoke open-plan living rooms, luxury corporate hosting suites, and deep-veined stone-integrated wall units built for modern luxury.</p>
-                            <span class="view-meta-year">Completed &bull; 2026</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-showcase-wrapper">
-                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Bahria Town Villa">
-                    <div class="hover-info-panel">
-                        <div class="hover-panel-content">
-                            <span class="project-location-tag">Bahria Town</span>
-                            <h3>Modern Minimalist Living Architecture</h3>
-                            <p>Frosted glass partitions, seamless floating staircases, and premium high-gloss structural elements managing sophisticated modern spacing constraints.</p>
-                            <span class="view-meta-year">Completed &bull; 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-showcase-wrapper">
-                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="D-12 Sector Project">
-                    <div class="hover-info-panel">
-                        <div class="hover-panel-content">
-                            <span class="project-location-tag">D-12 Islamabad</span>
-                            <h3>Contemporary Executive Office Lounge</h3>
-                            <p>High-status spatial layout integrated with bespoke PU panelling, structural ceiling lights, and premium leather accents matching global modern standards.</p>
-                            <span class="view-meta-year">Completed &bull; 2025</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-showcase-wrapper">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Commercial Workspace">
-                    <div class="hover-info-panel">
-                        <div class="hover-panel-content">
-                            <span class="project-location-tag">Islamabad Elite Sectors</span>
-                            <h3>Premium High-Yield Commercial Infrastructure</h3>
-                            <p>Architectural layout transformation for high-end boutique showrooms and global corporate hubs focusing on maximizing spatial brand authority.</p>
-                            <span class="view-meta-year">Completed &bull; 2026</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-layout contact-form-bg">
-        <div class="main-container contact-split-box">
             
-            <div class="contact-details-panel">
-                <p class="section-tag text-white">RESERVE A CONSULTATION</p>
-                <h1 class="text-white">Let's Engineer Your Next High-Status Environment</h1>
-                <p class="form-panel-desc">Connect with our primary architectural execution office. Our leadership team will review your specifications to engineer a comprehensive spatial strategy.</p>
-                
-                <div class="meta-info-card">
-                    <div class="meta-icon-circle"><i class="fas fa-map-marked-alt"></i></div>
-                    <div>
-                        <h4>Studio Headquarters</h4>
-                        <p>Islamabad, Pakistan</p>
+            <div class="services-grid">
+                <div class="service-card glass-panel hover-lift">
+                    <i class="fas fa-home"></i>
+                    <h3>Residential Design</h3>
+                    <p>Complete structural architecture and space-planning for high-end villas and penthouses.</p>
+                </div>
+                <div class="service-card glass-panel hover-lift">
+                    <i class="fas fa-building"></i>
+                    <h3>Commercial Fit-outs</h3>
+                    <p>Sophisticated commercial layouts engineered to echo corporate prestige for global founders.</p>
+                </div>
+                <div class="service-card glass-panel hover-lift">
+                    <i class="fas fa-tools"></i>
+                    <h3>Custom Renovation</h3>
+                    <p>Re-engineering legacy properties with modern interfaces and high-end surface finishes.</p>
+                </div>
+                <div class="service-card glass-panel hover-lift">
+                    <i class="fas fa-couch"></i>
+                    <h3>Material & Furniture</h3>
+                    <p>Premium sourcing of high-grade PU panels, MDF, and bespoke architectural textures.</p>
+                </div>
+            </div>
+            <div class="center-btn-wrapper mt-40">
+                <a href="services.html" class="btn-outline-navy">View All 10 Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-layout">
+        <div class="container">
+            <div class="section-header glass-panel">
+                <h2>Our Elite Portfolio</h2>
+                <p>Explore our recent monumental executions across the capital.</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item glass-border">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Dhamiyal Camp">
+                    <div class="portfolio-hover">
+                        <span class="location-tag">Dhamiyal Camp</span>
+                        <h3>Industrial Structural Deployment</h3>
                     </div>
                 </div>
-
-                <div class="meta-info-card">
-                    <div class="meta-icon-circle"><i class="fas fa-phone-volume"></i></div>
-                    <div>
-                        <h4>Direct Liaison Hot-line</h4>
-                        <p>0302 511 3791</p>
+                <div class="portfolio-item glass-border">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="DHA Phases">
+                    <div class="portfolio-hover">
+                        <span class="location-tag">DHA (All Phases)</span>
+                        <h3>Premium Luxury Villas</h3>
                     </div>
                 </div>
-
-                <div class="meta-info-card">
-                    <div class="meta-icon-circle"><i class="fas fa-envelope-open-text"></i></div>
-                    <div>
-                        <h4>Secure Enterprise Intake</h4>
-                        <p>info@alrahmaninterior.com</p>
+                <div class="portfolio-item glass-border">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Gulberg Greens">
+                    <div class="portfolio-hover">
+                        <span class="location-tag">Gulberg Greens</span>
+                        <h3>Megastructure Farmhouse</h3>
                     </div>
                 </div>
             </div>
+            <div class="center-btn-wrapper mt-40">
+                <a href="portfolio.html" class="btn-navy">Explore Full Portfolio</a>
+            </div>
+        </div>
+    </section>
 
-            <div class="contact-intake-form-box">
-                <form action="https://formsubmit.co/adeelhaider8236@gmail.com" method="POST" class="intake-form-element">
-                    <input type="hidden" name="_subject" value="URGENT: New High-Yield Architectural Inquiry Detected">
+    <section class="section-layout contact-bg">
+        <div class="container contact-wrapper">
+            
+            <div class="contact-info glass-panel">
+                <h2>Engineer Your Space</h2>
+                <p>Connect with our primary architectural execution office at <strong>alrahmaninterior.tech</strong>. Our leadership team is ready to review your specifications.</p>
+                <div class="info-line"><i class="fas fa-phone-alt"></i> 0302 511 3791</div>
+                <div class="info-line"><i class="fas fa-envelope"></i> info@alrahmaninterior.tech</div>
+                <div class="info-line"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</div>
+            </div>
+
+            <div class="contact-form-box glass-panel">
+                <form action="https://formsubmit.co/adeelhaider8236@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="URGENT: New Architectural Inquiry - Al-Rahman Interior">
                     <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://alrahmaninterior.tech/thanks.html">
                     
-                    <div class="input-field-group">
-                        <input type="text" name="Client_Name" placeholder="Your Name" required>
-                    </div>
-                    <div class="input-field-group">
-                        <input type="email" name="Client_Email" placeholder="Email Address" required>
-                    </div>
-                    <div class="input-field-group">
-                        <input type="text" name="Client_Phone" placeholder="Phone Number" required>
-                    </div>
+                    <input type="text" name="Client_Name" placeholder="Full Name" required>
+                    <input type="email" name="Client_Email" placeholder="Email Address" required>
+                    <input type="text" name="Client_Phone" placeholder="Phone Number" required>
+                    
+                    <select name="Service_Required" required>
+                        <option value="" disabled selected>Select a Service</option>
+                        <option value="Residential Interior Design">1. Residential Interior Design</option>
+                        <option value="Commercial Office Fit-outs">2. Commercial Office Fit-outs</option>
+                        <option value="Complete Home Renovation">3. Complete Home Renovation</option>
+                        <option value="3D Architectural Planning">4. 3D Architectural Planning</option>
+                        <option value="Ceiling & Partitioning Systems">5. Ceiling & Partitioning Systems</option>
+                        <option value="Custom Furniture Manufacturing">6. Custom Furniture Manufacturing</option>
+                        <option value="Material Supply (PU Panels, MDF)">7. Material Supply (PU Panels, MDF)</option>
+                        <option value="Lighting & Electrical Deployment">8. Lighting & Electrical Deployment</option>
+                        <option value="Flooring & Tiling Solutions">9. Flooring & Tiling Solutions</option>
+                        <option value="Smart Home & Automation Setup">10. Smart Home & Automation Setup</option>
+                    </select>
 
-                    <div class="input-field-group">
-                        <select name="Project_Aesthetic_Interest" required>
-                            <option value="" disabled selected>Interested In</option>
-                            <option value="DHA Luxury Residential Renovation">DHA Luxury Residential Renovation</option>
-                            <option value="Gulberg Greens Elite Farmhouse Design">Gulberg Greens Elite Farmhouse Design</option>
-                            <option value="Bahria Town / D-12 Spacing Architecture">Bahria Town / D-12 Spacing Architecture</option>
-                            <option value="Dhamiyal Camp Structural / Material Project">Dhamiyal Camp Structural / Material Project</option>
-                            <option value="Commercial Office / Showroom Fit-out">Commercial Office / Showroom Fit-out</option>
-                        </select>
-                    </div>
-
-                    <div class="input-field-group">
-                        <textarea name="Project_Details_Brief" placeholder="Describe your project spatial requirements, location, and timeline brief..." rows="5" required></textarea>
-                    </div>
-
-                    <button type="submit" class="form-submit-action-btn">SUBMIT INQUIRY</button>
+                    <textarea name="Project_Details" placeholder="Describe your project spatial requirements, location, and timeline brief..." rows="5" required></textarea>
+                    
+                    <button type="submit" class="btn-navy w-100">SUBMIT INQUIRY</button>
                 </form>
             </div>
-
+            
         </div>
     </section>
 
-    <footer class="footer-layout">
-        <div class="main-container footer-bottom-row">
-            <p class="copyright-text">&copy; 2026 AL-Rahman Interior. All rights preserved under international intellectual properties.</p>
-            <p class="adbismarketing-hub-signature">Prepared & Marketed Globally by <strong>AdBis Marketing Hub</strong></p>
+    <footer class="footer glass-panel">
+        <div class="footer-content">
+            <p>&copy; 2026 AL-Rahman Interior. All rights preserved under international intellectual properties.</p>
+            <p>Official Domain: <strong>alrahmaninterior.tech</strong></p>
+            <p class="agency-credit mt-10">Prepared & Marketed Globally by <strong>AdBis Marketing Hub</strong></p>
         </div>
     </footer>
 
