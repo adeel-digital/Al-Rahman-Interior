@@ -218,18 +218,47 @@ span { color: var(--navy-blue); font-weight: 700; }
 .footer-content p { font-weight: 600; font-size: 15px; margin-bottom: 5px; color: var(--text-black); }
 .agency-credit { color: var(--navy-blue); margin-top: 10px; font-size: 0.95rem; font-weight: 700; }
 
-/* --- RESPONSIVE MOBILE FIXES --- */
+/* --- RESPONSIVE MOBILE & TABLET ARCHITECTURE --- */
 @media (max-width: 1024px) {
     .dual-column-layout, .contact-wrapper { grid-template-columns: 1fr; }
     .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-    .hero-content h1 { font-size: 3rem; }
+    .hero-content h1 { font-size: 3.2rem; }
 }
+
 @media (max-width: 768px) {
-    .navbar { width: 100%; border-radius: 0; top: 0; padding: 15px; height: auto; }
-    .nav-logo { transform: scale(1); max-width: 140px; }
-    .nav-links { display: none; } /* Mobile Menu Toggle Required */
-    .portfolio-grid, .services-grid { grid-template-columns: 1fr; }
-    .hero-content { padding: 40px 20px; }
-    .hero-content h1 { font-size: 2.5rem; }
+    /* 1. Global Overflow & Spacing Fix */
+    body, html { overflow-x: hidden; width: 100%; }
+    .container { width: 92%; padding: 0; }
+    .section-layout { padding: 60px 0; }
+    
+    /* 2. Navbar Mobile Lock */
+    .navbar { width: 95%; padding: 0 15px; height: 60px; top: 15px; }
+    .nav-logo { transform: scale(1); max-width: 130px; height: 40px; } /* Reset scale for mobile */
+    .nav-links { display: none; }
+    
+    /* 3. Hero Section & Typography Shrink */
+    .hero-content { padding: 35px 25px; width: 92%; margin-top: 30px; }
+    .hero-content h1 { font-size: 2.3rem; margin-bottom: 15px; }
+    .hero-content p { font-size: 1rem; margin-bottom: 25px; }
+    
+    /* Buttons Full Width on Mobile */
+    .hero-buttons { flex-direction: column; gap: 15px; }
+    .hero-buttons a { width: 100%; text-align: center; }
+    
+    /* 4. Clash Fix: Move Carousel Controls to Bottom Center */
+    .carousel-controls { 
+        bottom: 25px; left: 50%; right: auto; 
+        transform: translateX(-50%); gap: 15px; 
+    }
+    
+    /* 5. Grid Overflow Fix (Stop Cards from cutting off) */
+    .portfolio-grid, .services-grid { grid-template-columns: 1fr; gap: 20px; }
+    .service-card { padding: 30px 20px; }
+    .section-heading, .section-header h2, .contact-info h2 { font-size: 2.2rem; }
+    
+    /* 6. Form & Contact Adjustments */
+    .contact-info, .contact-form-box { padding: 35px 20px; }
+    
+    /* Hide Side Socials on Phone */
     .social-sidebar { display: none; }
 }
